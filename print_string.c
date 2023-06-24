@@ -13,7 +13,7 @@ int print_string(char *str)
 		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
-		write(1, &str[i], 1);
+		_putchar(str[i]);
 		count++;
 	}
 	return (count);

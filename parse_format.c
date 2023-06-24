@@ -15,7 +15,7 @@ int parse_format(const char *format, va_list args, unsigned int i, int count)
 	switch (format[i])
 	{
 		case 'c':
-			count += print_char(va_arg(args, int));
+			count += _putchar(va_arg(args, int));
 			break;
 		case 's':
 			count += print_string(va_arg(args, char *));
@@ -25,15 +25,15 @@ int parse_format(const char *format, va_list args, unsigned int i, int count)
 			count += print_int(va_arg(args, int));
 			break;
 		case '%':
-			write(1, "%", 1);
+			count += _putchar('%');
 			break;
 		case 'b':
 			count += print_binary(va_arg(args, unsigned int));
 			break;
 		/* Add cases for other format specifiers */
 		default:
-			write(1, "%", 1);
-			write(1, &format[i], 1);
+			_putchar('%');
+			_putchar(format[i]);
 			count += 2;
 			break;
 	}

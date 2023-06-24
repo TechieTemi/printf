@@ -12,7 +12,7 @@ int print_int(int n)
 
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		_putchar('-');
 		num = -n;
 		count++;
 	}

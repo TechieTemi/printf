@@ -13,7 +13,7 @@ int print_binary(unsigned int num)
 
 	if (num >= 2)
 		counter += print_binary(num / 2);
-	write(1, &"01"[num % 2], 1);
+	_putchar((num % 2) + '0');
 	counter++;
 	return (counter);
 }

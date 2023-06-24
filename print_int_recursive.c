@@ -12,7 +12,7 @@ int print_int_recursive(unsigned int num)
 
 	if (num / 10)
 		count += print_int_recursive(num / 10);
-	write(1, &"0123456789"[num % 10], 1);
+	_putchar((num % 10) + '0');
 	count++;
 	return (count);
 }
