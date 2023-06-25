@@ -8,11 +8,11 @@
 
 int print_int_recursive(unsigned int num)
 {
-	unsigned int count = 0;
+	unsigned int counter = 0;
 
 	if (num / 10)
-		count += print_int_recursive(num / 10);
+		counter += print_int_recursive(num / 10);
 	_putchar((num % 10) + '0');
-	count++;
-	return (count);
+	counter++;
+	return (counter);
 }
