@@ -8,18 +8,18 @@
 
 int print_int(int n)
 {
-	unsigned int num, count = 0;
+	unsigned int num, counter = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		num = -n;
-		count++;
+		counter++;
 	}
 	else
 	{
 		num = n;
 	}
-	count += print_int_recursive(num);
-	return (count);
+	counter += print_int_recursive(num);
+	return (counter);
 }
