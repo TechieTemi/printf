@@ -7,13 +7,13 @@
  */
 int print_string(char *str)
 {
-	unsigned int i, counter = 0;
+	unsigned int j, counter = 0;
 
 	if (str == NULL)
 		str = "(null)";
-	for (i = 0; str[i]; i++)
+	for (j = 0; str[j]; j++)
 	{
-		_putchar(str[i]);
+		_putchar(str[j]);
 		counter++;
 	}
 	return (counter);
