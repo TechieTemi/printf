@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_string - Helper function to print a string
+ * print_string - Function to print a string
  * @str: The string to print
  * Return: Number of characters printed
  */
