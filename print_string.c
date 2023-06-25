@@ -10,7 +10,7 @@ int print_string(char *str)
 	unsigned int i, count = 0;
 
 	if (str == NULL)
-		return (0);
+		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
 		_putchar(str[i]);

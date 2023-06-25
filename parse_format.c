@@ -20,12 +20,12 @@ int parse_format(const char *format, va_list args, unsigned int i, int count)
 		case 's':
 			count += print_string(va_arg(args, char *));
 			break;
+		case '%':
+			count += _putchar('%');
+			break;
 		case 'd':
 		case 'i':
 			count += print_int(va_arg(args, int));
-			break;
-		case '%':
-			count += _putchar('%');
 			break;
 		case 'b':
 			count += print_binary(va_arg(args, unsigned int));
