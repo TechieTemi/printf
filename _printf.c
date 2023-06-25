@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
-	int count = 0;
+	int counter = 0;
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
@@ -20,16 +20,16 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count = parse_format(format, args, i, count);
+			counter = parse_format(format, args, i, counter);
 		}
 		else
 		{
 			_putchar(format[i]);
-			count++;
+			counter++;
 		}
 		i++;
 	}
 
 	va_end(args);
-	return (count);
+	return (counter);
 }
