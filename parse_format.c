@@ -5,7 +5,7 @@
  * @format: Format string
  * @args: va_list containing the arguments
  * @i: Current string position
- * @count: number of chars printed
+ * @counter: number of chars printed
  *
  * Return: Number of characters printed
  */
