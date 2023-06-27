@@ -30,6 +30,11 @@ int parse_format(const char *format, va_list args, unsigned int i, int counter)
 	{
 		if (format[i] == format_specs[j].specifier)
 		{
+			if (format[i] == '%')
+			{
+				counter += _putchar('%');
+				break;
+			}
 			counter += format_specs[j].printer(args);
 			break;
 		}
