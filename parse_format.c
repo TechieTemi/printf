@@ -12,30 +12,34 @@
 
 int parse_format(const char *format, va_list args, unsigned int i, int counter)
 {
-	switch (format[i])
+	unsigned long int j;
+	_printf_spec format_specs[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_char},
+		{'d', print_int},
+		{'i', print_int},
+		{'b', print_binary},
+		{'u', print_unsigned},
+		{'x', print_hex},
+		{'X', print_hex_upper},
+		{'o', print_octal},
+	};
+
+	for (j = 0; j < sizeof(format_specs) / sizeof(format_specs[0]); j++)
 	{
-		case 'c':
-			counter += _putchar(va_arg(args, int));
+		if (format[i] == format_specs[j].specifier)
+		{
+			counter += format_specs[j].printer(args);
 			break;
-		case 's':
-			counter += print_string(va_arg(args, char *));
-			break;
-		case '%':
-			counter += _putchar('%');
-			break;
-		case 'd':
-		case 'i':
-			counter += print_int(va_arg(args, int));
-			break;
-		case 'b':
-			counter += print_binary(va_arg(args, unsigned int));
-			break;
-		/* Add cases for other format specifiers */
-		default:
-			_putchar('%');
-			_putchar(format[i]);
-			counter += 2;
-			break;
+		}
 	}
+	if (j == sizeof(format_specs) / sizeof(format_specs[0]))
+	{
+		_putchar('%');
+		_putchar(format[i]);
+		counter += 2;
+	}
+
 	return (counter);
 }
