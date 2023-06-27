@@ -13,7 +13,7 @@ int print_octal_helper(unsigned int num)
 	if (num / 8)
 		counter += print_octal_helper(num / 8);
 
-	counter += _putchar('0' + num % 8);
+	counter += _putchar((num % 8) + '0');
 
 	return (counter);
 }
@@ -32,7 +32,7 @@ int print_octal(va_list arg)
 	if (num / 8)
 		counter += print_octal_helper(num / 8);
 
-	counter += _putchar('0' + num % 8);
+	counter += _putchar((num % 8) + '0');
 
 	return (counter);
 }
