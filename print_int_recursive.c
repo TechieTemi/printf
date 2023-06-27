@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_int_recursive - Recursive helper function to print an integer
+ * print_int_recursive - Helper function to print an integer
  * @num: The integer to print
  * Return: Number of characters printed
  */
