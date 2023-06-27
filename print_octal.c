@@ -6,7 +6,7 @@
  * Return: Number of characters printed
  */
 
-int print_octal_helper(int num)
+int print_octal_helper(unsigned int num)
 {
 	int counter = 0;
 
@@ -26,13 +26,20 @@ int print_octal_helper(int num)
 
 int print_octal(va_list arg)
 {
-	int num = va_arg(arg, int);
-	int counter = 0;
+	unsigned int num, counter = 0;
+	int n = va_arg(arg, int);
 
-	if (num / 8)
-		counter += print_octal_helper(num / 8);
-
-	counter += _putchar('0' + num % 8);
+	if (n < 0)
+	{
+		_putchar('-');
+		num = -n;
+		counter++;
+	}
+	else
+	{
+		num = n;
+	}
+	counter += print_octal_helper(num);
 
 	return (counter);
 }
