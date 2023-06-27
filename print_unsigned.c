@@ -26,13 +26,19 @@ int print_unsigned_helper(unsigned int num)
 
 int print_unsigned(va_list arg)
 {
-	unsigned int num = va_arg(arg, unsigned int);
-	int counter = 0;
+	unsigned int num, counter = 0, n = va_arg(arg, unsigned int);
 
-	if (num / 10)
-		counter += print_unsigned_helper(num / 10);
-
-	counter += _putchar('0' + num % 10);
+	if (n < 0)
+	{
+		_putchar('-');
+		num = -n;
+		counter++;
+	}
+	else
+	{
+		num = n;
+	}
+	counter += print_int_helper(num);
 
 	return (counter);
 }
