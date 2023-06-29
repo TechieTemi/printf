@@ -21,9 +21,10 @@ int parse_format(const char *format, va_list args, unsigned int i, int counter)
 		{'i', print_int},
 		{'b', print_binary},
 		{'u', print_unsigned},
+		{'o', print_octal},
 		{'x', print_hex},
 		{'X', print_hex_upper},
-		{'o', print_octal},
+		{'S', print_non_printables},
 	};
 
 	for (j = 0; j < sizeof(format_specs) / sizeof(format_specs[0]); j++)
