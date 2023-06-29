@@ -11,25 +11,25 @@ int hex_char(unsigned int num)
 	switch (num)
 	{
 	case 10:
-		return (_putchar(97));
+		return ('a');
 	break;
 	case 11:
-		return (_putchar(98));
+		return ('b');
 	break;
 	case 12:
-		return (_putchar(99));
+		return ('c');
 	break;
 	case 13:
-		return (_putchar(100));
+		return ('d');
 	break;
 	case 14:
-		return (_putchar(101));
+		return ('e');
 	break;
 	case 15:
-		return (_putchar(102));
+		return ('f');
 	break;
 	default:
-		return (_putchar(num + '0'));
+		return (num + '0');
 	break;
 	}
 }
