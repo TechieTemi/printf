@@ -31,5 +31,7 @@ int print_unsigned(va_list args);
 int print_char(va_list args);
 int print_non_printables(va_list arg);
 int print_hex_upper_helper(unsigned int num);
+int hex_char(unsigned int num);
+int print_address(va_list arg);
 
 #endif

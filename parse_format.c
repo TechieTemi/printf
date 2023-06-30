@@ -25,6 +25,7 @@ int parse_format(const char *format, va_list args, unsigned int i, int counter)
 		{'x', print_hex},
 		{'X', print_hex_upper},
 		{'S', print_non_printables},
+		{'p', print_address},
 	};
 
 	for (j = 0; j < sizeof(format_specs) / sizeof(format_specs[0]); j++)
